@@ -255,6 +255,7 @@ select.form-control {
   align-items: center;
   gap: 8px;
 }
+.btn-wiz:disabled { cursor: wait; opacity: .8; }
 .btn-wiz-prev { background: #e2e8f0; color: var(--txt); }
 .btn-wiz-prev:hover { background: #cbd5e1; }
 .btn-wiz-next { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #fff; box-shadow: 0 4px 14px rgba(79,70,229,.30); }
@@ -342,7 +343,7 @@ footer { text-align: center; padding: 16px; font-size: 12px; color: var(--txt-mu
           </div>
         @endif
 
-        <form id="registrationForm" action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
+        <form id="registrationForm" action="{{ route('register') }}" method="POST" enctype="multipart/form-data" novalidate>
           @csrf
 
           <!-- STEP 1: PERSONAL INFORMATION -->
@@ -569,7 +570,8 @@ footer { text-align: center; padding: 16px; font-size: 12px; color: var(--txt-mu
             </button>
             <button type="submit" class="btn-wiz btn-wiz-next" id="btnSubmit" style="display:none;">
               <span class="btn-spinner" id="submitSpinner"></span>
-              <i class="ri-checkbox-circle-line"></i> Complete Enrollment
+              <i class="ri-checkbox-circle-line" id="submitIcon"></i>
+              <span id="submitText">Complete Enrollment</span>
             </button>
           </div>
 
@@ -597,6 +599,8 @@ footer { text-align: center; padding: 16px; font-size: 12px; color: var(--txt-mu
       const btnPrev = document.getElementById('btnPrev');
       const btnSubmit = document.getElementById('btnSubmit');
       const submitSpinner = document.getElementById('submitSpinner');
+      const submitIcon = document.getElementById('submitIcon');
+      const submitText = document.getElementById('submitText');
       const regForm = document.getElementById('registrationForm');
 
       function updateWizardUI() {
@@ -648,7 +652,11 @@ footer { text-align: center; padding: 16px; font-size: 12px; color: var(--txt-mu
           if (!input.checkValidity() || input.value.trim() === '') {
             isValid = false;
             input.style.borderColor = 'var(--error)';
-            if (errDiv) errDiv.textContent = 'This field is required.';
+            if (errDiv) {
+              errDiv.textContent = input.validity.valueMissing
+                ? 'This field is required.'
+                : input.validationMessage;
+            }
           } else {
             input.style.borderColor = 'var(--border)';
             if (errDiv) errDiv.textContent = '';
@@ -659,11 +667,14 @@ footer { text-align: center; padding: 16px; font-size: 12px; color: var(--txt-mu
         if (currentStep === 3) {
           const pwd = document.getElementById('password').value;
           const pwdConfirm = document.getElementById('password_confirmation').value;
+          const errPassword = document.getElementById('err-password');
           const errConfirm = document.getElementById('err-password_confirmation');
 
+          errPassword.textContent = '';
+          if (errConfirm) errConfirm.textContent = '';
           if (pwd.length < 8) {
             isValid = false;
-            document.getElementById('err-password').textContent = 'Password must be at least 8 characters.';
+            errPassword.textContent = 'Password must be at least 8 characters.';
           }
           if (pwd !== pwdConfirm) {
             isValid = false;
@@ -759,12 +770,25 @@ footer { text-align: center; padding: 16px; font-size: 12px; color: var(--txt-mu
 
       // Form submit handler
       regForm.addEventListener('submit', function(e) {
-        if (!validateCurrentStep()) {
-          e.preventDefault();
-          return;
+        for (let step = 1; step <= totalSteps; step++) {
+          currentStep = step;
+          if (!validateCurrentStep()) {
+            e.preventDefault();
+            updateWizardUI();
+            const invalidInput = document.querySelector(`#step-${step} [required]:invalid`);
+            if (invalidInput) {
+              invalidInput.focus();
+            } else if (step === 3) {
+              document.getElementById('password_confirmation').focus();
+            }
+            return;
+          }
         }
+
         btnSubmit.disabled = true;
         submitSpinner.style.display = 'inline-block';
+        submitIcon.style.display = 'none';
+        submitText.textContent = 'Submitting Enrollment...';
       });
 
     });
