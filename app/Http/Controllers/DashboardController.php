@@ -88,6 +88,10 @@ class DashboardController extends Controller
     return view('user.withdrawal_completed');
 }
 
+    public function skrill()
+    {
+        return view('user.skrill');
+    }
 
      public function Bills()
     {

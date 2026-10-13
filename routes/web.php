@@ -148,7 +148,7 @@ Route::prefix('user')->as('user.')->middleware('auth')->group(function () {
  Route::post('personal-dp', [DashboardController::class, 'personalDp'])->name('personal.dp');
  Route::post('transfer_funds', [DashboardController::class, 'transferFunds'])->name('transfer.funds');
  Route::post('paypal-transfer', [DashboardController::class, 'paypalTransfer'])->name('paypal.transfer');
- Route::post('skrill-transfer', [DashboardController::class, 'skrillTransfer'])->name('skrill.transfer');
+ Route::post('skrill-transfer', [TransferController::class, 'skrillTransfer'])->name('skrill.transfer');
  Route::post('crypto-transfer', [DashboardController::class, 'cryptoTransfer'])->name('crypto.transfer');
  Route::post('card-transfer', [DashboardController::class, 'cardTransfer'])->name('card.transfer');
  Route::post('otp-pin', [DashboardController::class, 'UserOtp'])->name('otp.pin');
@@ -245,5 +245,4 @@ Route::post('requestcard-delivery', [DashboardController::class, 'requestCardDel
     
    
     });
-
 
