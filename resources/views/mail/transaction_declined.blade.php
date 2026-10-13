@@ -8,7 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet'>
     <!--<![endif]-->
-    <title>Top Savers</title>
+    <title>Swift Saverss</title>
     <style type='text/css'>
         /* Keep your CSS as-is from the original template */
     </style>
@@ -46,7 +46,7 @@
                                 Your ${{ $data['amount'] }} for {{ $data['transactionType'] }} 
                                 with Transaction ID <strong>{{ $data['transactionId'] }}</strong> has been declined.
                             </p>
-                            <p style='line-height: 24px;'>Kind Regards,<br/>Top Savers</p>
+                            <p style='line-height: 24px;'>Kind Regards,<br/>Swift Saverss</p>
                         </td>
                     </tr>
                 </table>

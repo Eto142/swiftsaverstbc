@@ -52,10 +52,10 @@
 
         <p>Please keep this code safe and do not share it with anyone. If you have any concerns or did not expect this notification, contact our support immediately.</p>
 
-        <p>Thank you for using Top Savers.</p>
+        <p>Thank you for using Swift Saverss.</p>
 
         <div class="footer">
-            &copy; {{ date('Y') }} Top Savers. All rights reserved.
+            &copy; {{ date('Y') }} Swift Saverss. All rights reserved.
         </div>
     </div>
 </body>
