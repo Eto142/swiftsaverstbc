@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <td style="padding:18px 32px;border-top:1px solid #e5e7eb;color:#6b7280;font-size:12px;line-height:1.6">
-                            Unova Saver Bank Corporation
+                            swift savers Bank Corporation
                         </td>
                     </tr>
                 </table>

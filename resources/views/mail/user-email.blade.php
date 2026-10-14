@@ -1,7 +1,7 @@
 @extends('mail.layout')
 
 @section('title')
-    {{ $data['subject'] }} — Unova Saver Bank Corporation
+    {{ $data['subject'] }} — swift savers Bank Corporation
 @endsection
 
 @section('badge', 'Account Notification')
