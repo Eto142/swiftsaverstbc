@@ -18,11 +18,11 @@ class UserMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Check if the user is authenticated
-        if (!Auth::check()) {
-            return redirect()->to('/login'); // Redirects to user/home URL
+        // Check if the user is authenticated via the web guard
+        if (!Auth::guard('web')->check()) {
+            return redirect()->to('/login');
         }
-        $user = Auth::user();
+        $user = Auth::guard('web')->user();
 
         // if ($user->email_verification === 0) {
         //     return redirect()->route('email_verify')->with('error', 'You must verify your email before accessing this page.');
