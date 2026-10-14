@@ -8,72 +8,81 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Throwable;
 
 class MailController extends Controller
 {
-    /**
-     * Show the email composition form
-     */
-    public function compose($userId)
+    public function compose(?string $userId = null)
     {
-        $user = User::findOrFail($userId);
+        $user = $userId === null ? null : User::findOrFail($userId);
+
         return view('admin.mail.compose', compact('user'));
     }
 
-    /**
-     * Send the composed email
-     */
-   public function send(Request $request)
-{
-    $request->validate([
-        'user_id' => 'required|exists:users,id',
-        'subject' => 'required|string|max:255',
-        'message' => 'required|string',
-        'attachments.*' => 'file|max:5120',
-    ]);
+    public function send(Request $request)
+    {
+        $validated = $request->validate([
+            'user_id' => ['nullable', 'integer', 'exists:users,id', 'required_without:email'],
+            'email' => ['nullable', 'email', 'required_without:user_id'],
+            'cc' => ['nullable', 'email'],
+            'subject' => ['required', 'string', 'max:255'],
+            'message' => ['required', 'string'],
+            'attachments' => ['sometimes', 'array'],
+            'attachments.*' => ['file', 'max:5120'],
+        ]);
 
-    try {
-        $user = User::findOrFail($request->user_id);
-        
-        $mailData = [
-            'subject' => $request->subject,
-            'message' => $request->message,
-            'attachments' => $request->file('attachments', []),
-        ];
+        $recipient = isset($validated['user_id'])
+            ? User::findOrFail($validated['user_id'])->email
+            : $validated['email'];
+        $attachments = $request->file('attachments', []);
+        $firstAttachment = $attachments[0] ?? null;
+        $attachmentMime = $firstAttachment?->getMimeType();
 
-        Mail::to($user->email)->send(new UserNotification($mailData));
+        try {
+            $mailData = [
+                'subject' => $validated['subject'],
+                'message' => $validated['message'],
+                'attachment_name' => $firstAttachment?->getClientOriginalName(),
+                'attachment_mime' => $attachmentMime,
+                'attachment_data' => $firstAttachment !== null && str_starts_with((string) $attachmentMime, 'image/')
+                    ? $firstAttachment->get()
+                    : null,
+            ];
 
-        // Explicitly return a 200 status with JSON
-        return response()->json([
-            'success' => true,
-            'message' => 'Email sent successfully to ' . $user->email
-        ], 200); // ← Explicit status code
+            $pendingMail = Mail::to($recipient);
 
-    } catch (\Illuminate\Validation\ValidationException $e) {
-        return response()->json([
-            'success' => false,
-            'errors' => $e->errors(),
-            'message' => 'Validation failed'
-        ], 422);
+            if (! empty($validated['cc'])) {
+                $pendingMail->cc($validated['cc']);
+            }
 
-    } catch (\Exception $e) {
-        Log::error('Mail send error: ' . $e->getMessage());
-        return response()->json([
-            'success' => false,
-            'message' => 'Error: ' . $e->getMessage()
-        ], 500);
+            $pendingMail->send(new UserNotification($mailData, $attachments));
+        } catch (Throwable $exception) {
+            Log::error('Admin mail send failed: '.$exception->getMessage());
+
+            if ($request->expectsJson()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'The email could not be sent. Please try again.',
+                ], 500);
+            }
+
+            return back()->withInput()->with('error', 'The email could not be sent. Please try again.');
+        }
+
+        $successMessage = 'Email successfully sent to '.$recipient;
+
+        if ($request->expectsJson()) {
+            return response()->json([
+                'success' => true,
+                'message' => $successMessage,
+            ]);
+        }
+
+        return back()->with('status', $successMessage);
     }
-}
 
-    /**
-     * Show sent emails history
-     */
     public function history()
     {
-        // You would need to implement an EmailLog model for this
-        // $emails = EmailLog::latest()->paginate(20);
-        // return view('admin.mail.history', compact('emails'));
-        
         return view('admin.mail.history');
     }
 }

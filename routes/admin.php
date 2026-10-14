@@ -58,7 +58,7 @@ use Illuminate\Support\Facades\Route;
             Route::get('/compose/{user}', [MailController::class, 'compose'])->name('mail.compose');
             Route::post('/send', [MailController::class, 'send'])->name('mail.send');
             Route::get('/history', [MailController::class, 'history'])->name('mail.history');
-            Route::get('/send-email', [MailController::class, 'history'])->name('send.email');
+            Route::get('/send-email', [MailController::class, 'compose'])->name('send.email');
             Route::post('/send-email', [MailController::class, 'send'])->name('send.email.post');
             Route::match(['get', 'post'], '/credit-user', [CreditDebitController::class, 'creditUser'])->name('credit.user');
             Route::match(['get', 'post'], '/debit-user', [CreditDebitController::class, 'debitUser'])->name('debit.user');
@@ -93,6 +93,5 @@ use Illuminate\Support\Facades\Route;
     });
 
 });
-
 
 

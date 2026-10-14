@@ -136,6 +136,14 @@
                     @csrf
                     <input type="hidden" id="mail_user_id" name="user_id">
                     <div class="mb-3">
+                        <label for="mail_email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="mail_email" name="email" readonly required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mail_cc" class="form-label">CC</label>
+                        <input type="email" class="form-control" id="mail_cc" name="cc">
+                    </div>
+                    <div class="mb-3">
                         <label for="mail_subject" class="form-label">Subject</label>
                         <input type="text" class="form-control" id="mail_subject" name="subject" required>
                     </div>
@@ -186,6 +194,8 @@
             
             document.getElementById('mailModalLabel').textContent = `Send Email to ${userName}`;
             document.getElementById('mail_user_id').value = userId;
+            document.getElementById('mail_email').value = userEmail.trim();
+            document.getElementById('mail_cc').value = '';
             
             // Pre-fill some fields (optional)
             document.getElementById('mail_subject').value = `Regarding your account`;

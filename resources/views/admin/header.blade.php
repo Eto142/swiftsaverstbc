@@ -347,6 +347,11 @@
                 <span>Manage Users</span>
             </a>
 
+            <a href="{{ route('admin.send.email') }}" class="nav-link">
+                <i class="fas fa-envelope"></i>
+                <span>Send Mail</span>
+            </a>
+
             
             <a href="{{ route('admin.wallets.index') }}" class="nav-link">
     <i class="fas fa-sync-alt"></i>
@@ -408,4 +413,3 @@
      
         </div>
     </div>
-
