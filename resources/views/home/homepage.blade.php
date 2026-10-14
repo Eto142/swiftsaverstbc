@@ -6,14 +6,14 @@
 <section class="bk-hero">
   <div class="bk-hero-slides" id="bkHeroTrack">
 
-    <!-- Slide 1 — Digital Banking -->
+    <!-- Slide 1  Digital Banking -->
     <div class="bk-hero-slide">
       <div class="bk-hero-bg" style="background-image:url('{{ asset('frontassets/images/banner/banner-slide-1.jpg') }}')"></div>
       <div class="bk-wrap">
         <div class="bk-hero-body">
           <span class="bk-hero-label"><i class="ri-sparkling-2-fill"></i> Next-Generation Digital Banking</span>
           <h1>Your Wealth Deserves a <em>Smarter</em> Home.</h1>
-          <p>Swiftsavers Trust Bank fuses bank-grade 256-bit security with an experience engineered for modern life — lightning-fast global transfers, real-time portfolio insights, and expert human support available around the clock.</p>
+          <p>Swiftsavers Trust Bank fuses bank-grade 256-bit security with an experience engineered for modern life  lightning-fast global transfers, real-time portfolio insights, and expert human support available around the clock.</p>
           <div class="bk-hero-actions">
             <a href="{{ route('register') }}" class="bk-btn bk-btn--white">Open a Free Account <i class="ri-arrow-right-line"></i></a>
             <a href="{{ route('login') }}" class="bk-btn bk-btn--glass">Sign In <i class="ri-login-circle-line"></i></a>
@@ -22,14 +22,14 @@
       </div>
     </div>
 
-    <!-- Slide 2 — Personal & Business -->
+    <!-- Slide 2  Personal & Business -->
     <div class="bk-hero-slide">
       <div class="bk-hero-bg" style="background-image:url('{{ asset('frontassets/images/banner/banner-slide-2.jpg') }}')"></div>
       <div class="bk-wrap">
         <div class="bk-hero-body">
           <span class="bk-hero-label"><i class="ri-briefcase-4-fill"></i> Personal &amp; Business Banking</span>
           <h1>One Account. <em>Every</em> Dimension of Your Finances.</h1>
-          <p>Personal savings, business accounts, premium credit cards, and high-yield fixed deposits — all seamlessly managed from a single unified dashboard engineered to grow with your ambitions.</p>
+          <p>Personal savings, business accounts, premium credit cards, and high-yield fixed deposits  all seamlessly managed from a single unified dashboard engineered to grow with your ambitions.</p>
           <div class="bk-hero-actions">
             <a href="{{ url('services') }}" class="bk-btn bk-btn--white">Explore Services <i class="ri-arrow-right-line"></i></a>
             <a href="{{ route('register') }}" class="bk-btn bk-btn--glass">Get Started <i class="ri-user-add-line"></i></a>
@@ -38,14 +38,14 @@
       </div>
     </div>
 
-    <!-- Slide 3 — Global Transfers -->
+    <!-- Slide 3  Global Transfers -->
     <div class="bk-hero-slide">
       <div class="bk-hero-bg" style="background-image:url('{{ asset('frontassets/images/banner/banner-slide-3.jpg') }}')"></div>
       <div class="bk-wrap">
         <div class="bk-hero-body">
           <span class="bk-hero-label"><i class="ri-earth-fill"></i> Borderless Global Payments</span>
           <h1>Send Money Anywhere on Earth. <em>Instantly.</em></h1>
-          <p>Connect with 50+ countries through transparent, live mid-market exchange rates with zero hidden markups. Global finance — finally built the way it should feel: fast, fair, and effortless.</p>
+          <p>Connect with 50+ countries through transparent, live mid-market exchange rates with zero hidden markups. Global finance  finally built the way it should feel: fast, fair, and effortless.</p>
           <div class="bk-hero-actions">
             <a href="{{ route('register') }}" class="bk-btn bk-btn--white">Start Transferring <i class="ri-arrow-right-line"></i></a>
             <a href="{{ url('contact') }}" class="bk-btn bk-btn--glass">Talk to Us <i class="ri-customer-service-2-line"></i></a>
@@ -54,14 +54,14 @@
       </div>
     </div>
 
-    <!-- Slide 4 — High-Yield Savings -->
+    <!-- Slide 4  High-Yield Savings -->
     <div class="bk-hero-slide">
       <div class="bk-hero-bg" style="background-image:url('{{ asset('frontassets/images/banner/4.jpg') }}')"></div>
       <div class="bk-wrap">
         <div class="bk-hero-body">
           <span class="bk-hero-label"><i class="ri-pie-chart-2-fill"></i> High-Yield Tenured Savings</span>
           <h1>Lock In Superior Returns. Build <em>Lasting</em> Wealth.</h1>
-          <p>Grow your capital confidently with guaranteed, fixed interest rates on structured tenured deposits and exclusive high-yield wealth management accounts — designed to outperform and endure.</p>
+          <p>Grow your capital confidently with guaranteed, fixed interest rates on structured tenured deposits and exclusive high-yield wealth management accounts  designed to outperform and endure.</p>
           <div class="bk-hero-actions">
             <a href="{{ route('register') }}" class="bk-btn bk-btn--white">Start Growing Wealth <i class="ri-arrow-right-line"></i></a>
             <a href="{{ url('about') }}" class="bk-btn bk-btn--glass">Learn More <i class="ri-information-line"></i></a>
@@ -163,7 +163,7 @@
     <div class="bk-section-top">
       <span class="bk-label">Our Services</span>
       <h2 class="bk-title">World-Class Banking, Built Around <em>You</em></h2>
-      <p class="bk-desc">From everyday personal banking to high-speed international transfers and wealth-building deposit products — explore the complete financial ecosystem engineered around your goals.</p>
+      <p class="bk-desc">From everyday personal banking to high-speed international transfers and wealth-building deposit products  explore the complete financial ecosystem engineered around your goals.</p>
     </div>
     <div class="bk-cards-grid bk-cards-grid--bento">
       <div class="bk-card bk-card--featured sr">
@@ -176,13 +176,13 @@
       <div class="bk-card sr">
         <div class="bk-card-icon"><i class="ri-bank-line"></i></div>
         <h3>Personal Banking</h3>
-        <p>Checking and savings accounts that actually reward loyalty — competitive interest rates, zero maintenance fees, and a sleek dashboard that keeps you fully in control.</p>
+        <p>Checking and savings accounts that actually reward loyalty  competitive interest rates, zero maintenance fees, and a sleek dashboard that keeps you fully in control.</p>
         <a href="{{ url('services') }}" class="bk-card-link">Learn More <i class="ri-arrow-right-line"></i></a>
       </div>
       <div class="bk-card sr">
         <div class="bk-card-icon"><i class="ri-briefcase-4-line"></i></div>
         <h3>Business Solutions</h3>
-        <p>Commercial accounts, payroll automation, bulk payments, and treasury management tools — a complete financial backbone built for businesses ready to scale.</p>
+        <p>Commercial accounts, payroll automation, bulk payments, and treasury management tools  a complete financial backbone built for businesses ready to scale.</p>
         <a href="{{ url('services') }}" class="bk-card-link">Learn More <i class="ri-arrow-right-line"></i></a>
       </div>
       <div class="bk-card sr">
@@ -194,19 +194,19 @@
       <div class="bk-card sr">
         <div class="bk-card-icon"><i class="ri-hand-coin-line"></i></div>
         <h3>Loans &amp; Financing</h3>
-        <p>Flexible personal loans, business credit lines, and structured home financing — all with transparent, fixed rates and repayment terms tailored to your exact situation.</p>
+        <p>Flexible personal loans, business credit lines, and structured home financing  all with transparent, fixed rates and repayment terms tailored to your exact situation.</p>
         <a href="{{ url('services') }}" class="bk-card-link">Learn More <i class="ri-arrow-right-line"></i></a>
       </div>
       <div class="bk-card sr">
         <div class="bk-card-icon"><i class="ri-pie-chart-2-line"></i></div>
         <h3>Wealth &amp; Deposits</h3>
-        <p>Lock in guaranteed, above-market returns with our exclusive high-yield tenured deposit accounts — purpose-built to protect and compound your capital over time.</p>
+        <p>Lock in guaranteed, above-market returns with our exclusive high-yield tenured deposit accounts  purpose-built to protect and compound your capital over time.</p>
         <a href="{{ url('about') }}" class="bk-card-link">Learn More <i class="ri-arrow-right-line"></i></a>
       </div>
       <div class="bk-card bk-card--cta sr">
         <div class="bk-card-icon"><i class="ri-question-answer-line"></i></div>
         <h3>Have a Question?</h3>
-        <p>Our certified financial specialists are on hand 24/7 to help you choose the right product, open your account, or solve any issue — instantly.</p>
+        <p>Our certified financial specialists are on hand 24/7 to help you choose the right product, open your account, or solve any issue  instantly.</p>
         <a href="{{ url('contact') }}" class="bk-card-link">Speak to an Expert <i class="ri-arrow-right-line"></i></a>
       </div>
     </div>
@@ -227,13 +227,13 @@
       <div class="bk-step sr">
         <div class="bk-step-num">01</div>
         <h3>Create Your Account</h3>
-        <p>Register securely online in under 5 minutes — just a valid government ID and your basic details. No branch visit. No paperwork. No waiting.</p>
+        <p>Register securely online in under 5 minutes  just a valid government ID and your basic details. No branch visit. No paperwork. No waiting.</p>
       </div>
       <div class="bk-step-line"></div>
       <div class="bk-step sr">
         <div class="bk-step-num">02</div>
         <h3>Verify Your Identity</h3>
-        <p>Our automated, AI-powered verification process secures your account with bank-grade protocols from day one — private, instant, and completely friction-free.</p>
+        <p>Our automated, AI-powered verification process secures your account with bank-grade protocols from day one  private, instant, and completely friction-free.</p>
       </div>
       <div class="bk-step-line"></div>
       <div class="bk-step sr">
@@ -253,13 +253,13 @@
     <div class="bk-section-top">
       <span class="bk-label bk-label--light">Smart Banking</span>
       <h2 class="bk-title bk-title--white">One Platform. <em>Complete</em> Command of Your Money.</h2>
-      <p class="bk-desc bk-desc--light">We've merged cutting-edge fintech infrastructure with the kind of personal service that earns real trust — making financial management feel effortless, every single day.</p>
+      <p class="bk-desc bk-desc--light">We've merged cutting-edge fintech infrastructure with the kind of personal service that earns real trust  making financial management feel effortless, every single day.</p>
     </div>
     <div class="bk-fd-grid">
       <div class="bk-fd-item">
         <div class="bk-fd-icon"><i class="ri-send-plane-fill"></i></div>
         <h4>Instant Transfers</h4>
-        <p>Send domestic and international payments in seconds. Real-time confirmation, low fees, and complete transparency — every time.</p>
+        <p>Send domestic and international payments in seconds. Real-time confirmation, low fees, and complete transparency  every time.</p>
       </div>
       <div class="bk-fd-item">
         <div class="bk-fd-icon"><i class="ri-smartphone-line"></i></div>
@@ -269,17 +269,17 @@
       <div class="bk-fd-item">
         <div class="bk-fd-icon"><i class="ri-fingerprint-line"></i></div>
         <h4>Biometric Security</h4>
-        <p>Access your account with fingerprint or face recognition — secured by hardware-level authentication that never stores biometric data externally.</p>
+        <p>Access your account with fingerprint or face recognition  secured by hardware-level authentication that never stores biometric data externally.</p>
       </div>
       <div class="bk-fd-item">
         <div class="bk-fd-icon"><i class="ri-notification-3-line"></i></div>
         <h4>Instant Push Alerts</h4>
-        <p>Receive real-time SMS and email notifications the moment funds move, arrive, or trigger a balance change — you're always the first to know.</p>
+        <p>Receive real-time SMS and email notifications the moment funds move, arrive, or trigger a balance change  you're always the first to know.</p>
       </div>
       <div class="bk-fd-item">
         <div class="bk-fd-icon"><i class="ri-line-chart-line"></i></div>
         <h4>Spending Intelligence</h4>
-        <p>Automatic categorisation and vivid visual analytics help you understand where every dollar goes — and identify exactly where you can save more.</p>
+        <p>Automatic categorisation and vivid visual analytics help you understand where every dollar goes  and identify exactly where you can save more.</p>
       </div>
       <div class="bk-fd-item">
         <div class="bk-fd-icon"><i class="ri-shield-star-line"></i></div>
@@ -308,12 +308,12 @@
       <div class="bk-split-text sr">
         <span class="bk-label">Why Choose Us</span>
         <h2 class="bk-title">A Bank Built on Integrity, Not Just <em>Numbers</em></h2>
-        <p class="bk-desc" style="margin:0 0 20px">For over a decade, Swiftsavers Trust Bank has been redefining what digital finance can feel like — fusing powerful fintech infrastructure with genuine human care, so every customer feels safe, heard, and valued in everything we do.</p>
+        <p class="bk-desc" style="margin:0 0 20px">For over a decade, Swiftsavers Trust Bank has been redefining what digital finance can feel like  fusing powerful fintech infrastructure with genuine human care, so every customer feels safe, heard, and valued in everything we do.</p>
         <div class="bk-check-list">
           <div class="bk-check-item">
             <i class="ri-checkbox-circle-fill"></i>
             <div>
-              <strong>Radical Transparency — Always</strong>
+              <strong>Radical Transparency  Always</strong>
               <p>No hidden fees. No fine-print traps. No surprise charges. Just honest banking that respects your intelligence and your money.</p>
             </div>
           </div>
@@ -328,7 +328,7 @@
             <i class="ri-checkbox-circle-fill"></i>
             <div>
               <strong>24/7 Dedicated Human Support</strong>
-              <p>Speak with a real certified financial specialist any time of day or night — not a bot, not a script. A person who genuinely cares.</p>
+              <p>Speak with a real certified financial specialist any time of day or night  not a bot, not a script. A person who genuinely cares.</p>
             </div>
           </div>
         </div>
@@ -371,7 +371,7 @@
       </div>
       <div class="bk-compare-row">
         <div class="bk-compare-label">Monthly Account Fees</div>
-        <div class="bk-compare-col bk-compare-col--us"><i class="ri-checkbox-circle-fill"></i> $0 — Completely Free</div>
+        <div class="bk-compare-col bk-compare-col--us"><i class="ri-checkbox-circle-fill"></i> $0  Completely Free</div>
         <div class="bk-compare-col"><i class="ri-close-circle-line"></i> $10–$35 Recurring</div>
       </div>
       <div class="bk-compare-row">
@@ -391,7 +391,7 @@
     <div class="bk-section-top">
       <span class="bk-label">Live FX Rates</span>
       <h2 class="bk-title">Real-Time Rates. <em>Zero</em> Hidden Markups.</h2>
-      <p class="bk-desc">Our rates are sourced directly from global interbank markets and refreshed continuously — giving you complete visibility and the best value before every international transfer.</p>
+      <p class="bk-desc">Our rates are sourced directly from global interbank markets and refreshed continuously  giving you complete visibility and the best value before every international transfer.</p>
     </div>
     <div class="bk-rates-wrap sr">
       <table class="bk-rates-table">
@@ -454,7 +454,7 @@
     <div class="bk-section-top">
       <span class="bk-label">Client Stories</span>
       <h2 class="bk-title">Trusted by Thousands <em>Across the Globe</em></h2>
-      <p class="bk-desc">Don't take our word for it. Here's what real clients — from solo entrepreneurs to global business owners — say about banking with Swiftsavers Trust Bank every day.</p>
+      <p class="bk-desc">Don't take our word for it. Here's what real clients  from solo entrepreneurs to global business owners  say about banking with Swiftsavers Trust Bank every day.</p>
     </div>
     <div class="bk-rating-summary">
       <div class="bk-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i></div>
@@ -471,7 +471,7 @@
       </div>
       <div class="bk-testimonial sr">
         <div class="bk-stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
-        <p>"The interface is stunning, zero hidden charges, and my transfers arrive instantly every single time. I've been with three major banks — none of them come close to what Swiftsavers delivers."</p>
+        <p>"The interface is stunning, zero hidden charges, and my transfers arrive instantly every single time. I've been with three major banks  none of them come close to what Swiftsavers delivers."</p>
         <div class="bk-testimonial-author">
           <div class="bk-avatar"><i class="ri-user-3-fill"></i></div>
           <div><strong>Sarah Mitchell</strong><span>Creative Director, London</span></div>
@@ -497,7 +497,7 @@
     <div class="bk-cta-box sr">
       <div class="bk-cta-content">
         <h2>Ready to Experience Banking the Way It Should Be?</h2>
-        <p>Join tens of thousands of individuals and businesses already banking smarter with Swiftsavers Trust Bank. Open your free account in under 5 minutes — no paperwork, no branch visit, no nonsense.</p>
+        <p>Join tens of thousands of individuals and businesses already banking smarter with Swiftsavers Trust Bank. Open your free account in under 5 minutes  no paperwork, no branch visit, no nonsense.</p>
         <div class="bk-cta-btns">
           <a href="{{ route('register') }}" class="bk-btn bk-btn--white">Open Free Account <i class="ri-arrow-right-line"></i></a>
           <a href="{{ url('contact') }}" class="bk-btn bk-btn--glass">Talk to an Expert <i class="ri-customer-service-2-line"></i></a>
